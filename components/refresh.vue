@@ -1,8 +1,8 @@
 <template>
     <view class='refreshBox' :style="isTranform">
-        <view class='refresh' :style="isZoom" :class="isEnd==2?'animationSmall':''">
+        <view class='refresh' :style="isZoom" :class="isEnd===2?'animationSmall':''">
             <view class='refreshWord' v-if="isEnd === 0">松开刷新</view>
-            <view class='refreshCirle animation' v-if="isEnd == 1"></view>
+            <view class='refreshCirle animation' v-if="isEnd === 1"></view>
             <image class='iconYes' src='../static/icon-yes.png' v-if="isEnd===2"></image>
         </view>
     </view>
@@ -49,7 +49,7 @@ export default {
         },
         refreshEnd(e) {
             var that = this
-            if (this.isEnd == 0 && this.isTop == 1) {
+            if (this.isEnd === 0 && this.isTop === 1) {
                 if (this.isTranf >= 90) {
                     this.isTranf = 125
                     this.isEnd = 1

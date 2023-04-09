@@ -34,7 +34,7 @@ export default {
         };
     },
     created() {
-        var that = this
+        let that = this;
         // 获取设备宽度
         uni.getSystemInfo({
             success(e) {
@@ -50,14 +50,13 @@ export default {
         // 导航栏点击
         longClick(index) {
             if (this.tabTitle.length > 5) {
-                var tempIndex = index - 2;
+                let tempIndex = index - 2;
                 tempIndex = tempIndex <= 0 ? 0 : tempIndex;
-                this.tabLeft = (index - 2) * this.isWidth //设置下划线位置
+                this.tabLeft = (index - 2) * this.isWidth; //设置下划线位置
             }
             this.tabClick = index //设置导航点击了哪一个
-            this.isLeft = index * this.isWidth //设置下划线位置
+            this.isLeft = index * this.isWidth; //设置下划线位置
             this.$emit('changeTab', index);//设置swiper的第几页
-            // this.$parent.currentTab = index //设置swiper的第几页
         }
     }
 }

@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         conClick(e) {
-            var isReady = this.isReady
+            let isReady = this.isReady
             if (isReady === 1) {
                 // #ifdef H5
                 var isTop = Math.round(e.changedTouches[0].clientY) + 15 + 'px'
